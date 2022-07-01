@@ -6,6 +6,11 @@ Da bi program pravilno radio potrebno je da:
 (može se instalirati komandom "pip install Pillow" u command promptu)
 -da se BlackJack.py fajl nalazi u istom folderu kao i folder
   PNG-cards-1.3
+  
+Ukoliko ne pokrećete program preko kompajlera već preko BlackJack.exe instaliranje Pillow modula nije neophodno (valjda?)
+
+Folder sa nazivom BlackJack je konačan proizvod softvera u kojem se
+program pokreće pokretanjem BlackJack.exe
 
 Ukoliko zelite da zatvorite prozor pretisnite dugme 'Escape'
 
