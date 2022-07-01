@@ -1,0 +1,19 @@
+# project
+Projekat iz softverskog inženjerstva
+
+Da bi program pravilno radio potrebno je da:
+-korisnik ima instaliran PIL modul
+(može se instalirati komandom "pip install Pillow" u command promptu)
+-da se BlackJack.py fajl nalazi u istom folderu kao i folder
+  PNG-cards-1.3
+
+Ukoliko zelite da zatvorite prozor pretisnite dugme 'Escape'
+
+Folder sa nazivom BlackJack je konačan proizvod softvera u kojem se
+program pokreće pokretanjem BlackJack.exe
+
+promjenom varijable VELICINA_FONTA mijenja se velicina fonta ukoliko
+dođe do preklapanja stvari
+
+
+Uživajte :)
