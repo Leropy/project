@@ -1,0 +1,59 @@
+Beta 1.0.0 patch notes:
+-Made a new GUI for the game from scratch
+
+Beta 1.0.1 patch notes:
+-Fixed background color of game status (win/lose/draw) label
+
+Beta 1.0.2 patch notes:
+-Configured multiple background colors of the game status label:
+	yellow - draw
+	blue - win
+	red - lost
+
+Beta 1.0.3 patch notes:
+-Added error messages for wrong bet entry inputs:
+	title="Error_1", message="Enter only whole numbers!"
+	title="Error_2", message="Not enought funds!"
+	title="Error_3", message="Use only positive numbers!"
+
+Beta 1.1.0 patch notes:
+-Added DOUBLE DOWN option
+
+Beta 1.1.1 patch notes:
+-Added a dark green box around options section
+-Fixed bet gold not being applied to the current gold label
+after starting the round
+-Resized a starting window to 1200x900
+
+Beta 1.1.2 patch notes:
+-Added new face cards for jack, qeen and king of all suits
+
+Beta 1.1.3 patch notes:
+-Fixed padding in the option box frame after finishing the round
+
+Beta 1.1.4 patch notes:
+-Changed font on all the labels, buttons and entry boxes
+
+Beta 1.2.0 patch notes:
+-Fixed a major issue with player getting a Blackjack on the deal
+and not being recognised
+
+Beta 1.2.1 patch notes:
+-Changed a push outcome label color to orange for better contrast
+to the font
+
+Beta 1.2.2 patch notes:
+-Made a label for BlackJack win on deal:
+	text="PLAYER WON WITH BLACKJACK!", bg='purple'
+-Fixed player card sum not deleting from the player label, after
+  selecting 'play again' option
+-Fixed issue with BlackJack on deal gold not being added properly
+
+Beta 1.4.0 patch notes:
+-Added a SPLIT option
+
+Beta 1.4.1 patch notes:
+-Added default fullscreen and close on 'Escape'
+
+Beta 1.4.2 patch notes:
+-Fixed not cheking for player bust in split mode
