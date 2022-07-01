@@ -1,4 +1,4 @@
-# project
+# UPUTSTVO ZA UPOTREBU!!!!
 Projekat iz softverskog inženjerstva
 
 Da bi program pravilno radio potrebno je da:
