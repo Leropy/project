@@ -1,22 +1,24 @@
-#import os       # Korišteno prilikom testiranja
+#import os       # Koristeno prilikom testiranja
 from tkinter import *
 import random
 from tkinter import *
 from PIL import Image, ImageTk  # pip install Pillow
 
-#os._exit(00)    # Ukoliko dođe do greske run-ovati kod sa ovom linijom aktivnom da bi se restartovao kernel
+#os._exit(00)    # Ukoliko dodje do greske run-ovati kod sa ovom linijom aktivnom da bi se restartovao kernel
 
 global VELICINA_FONTA
 
-VELICINA_FONTA = 13     # PODEŠAVANJE FONTA <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+VELICINA_FONTA = 13     # PODESAVANJE FONTA <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
-ranks = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace')
+ranks = ('2', '3', '4', '5', '6', '7', '8', '9',
+         '10', 'Jack', 'Queen', 'King', 'Ace')
 
-values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 
-          '10': 10, 'Jack': 10, 'Queen': 10, 'King': 10, 'Ace': 11}
-
+values = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6,
+          '7': 7, '8': 8, '9': 9, '10': 10, 'Jack': 10,
+          'Queen': 10, 'King': 10, 'Ace': 11}
 
 # =======================================================================================================   # KLASE <-------------------
 
@@ -95,7 +97,6 @@ def hit(deck, hand):
 
 def take_bet(chips):
     
-    #while True:
     while len(bet_entry.get()) > 0:
         try:
             chips.bet = int(bet_entry.get())
@@ -237,19 +238,13 @@ def player_blackjack_win(player, dealer, chips):
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------
 
-global player_chips,deck,player_hand,player_hand_split,dealer_hand
+global player_chips, deck, player_hand, player_hand_split, dealer_hand
 
 player_chips = Chips()
-deck = Deck()
-
-player_hand = Hand()
-dealer_hand = Hand()
-
-
 
 root = Tk()
 root.title('BlackJack')
-root.geometry("1200x900")
+#root.geometry("1200x900")
 root.configure(background='green')
 root.attributes('-fullscreen', True)
 root.bind('<Escape>',lambda e: root.destroy())
@@ -262,10 +257,11 @@ def resize_card(card):
     card_picture = ImageTk.PhotoImage(card_img_resized)
     return card_picture
 
-main_frame = Frame(root, bg='green')
-main_frame.pack(pady=20)
 
 # Frejmovi za prikaza karata i opcija
+
+main_frame = Frame(root, bg='green')
+main_frame.pack(pady=20)
 
 dealer_frame = LabelFrame(main_frame, text=f'DEALER: ?', bd=0, bg='green', fg='white', font=('Verdana',VELICINA_FONTA,'bold'))
 dealer_frame.grid(row=0, column=0, pady=20, columnspan=2)
@@ -319,7 +315,6 @@ def deal_button():
         
         if values[player_hand.cards[0].rank] == values[player_hand.cards[1].rank]:
             split_button.grid(row=0,column=2, padx=10, rowspan=2)
-            #double_down_button.grid(row=1,columnspan=1, column=0)
         
         if player_hand.sum < 21:
             hit_button.configure(state=NORMAL)
@@ -337,7 +332,6 @@ def deal_button():
         if player_hand.sum == 21:
             stand_button_f()
             if dealer_hand.sum != player_hand.sum:
-                #player_chips.bet -= player_chips.bet
                 player_blackjack_win(player_hand, dealer_hand, player_chips)
                 gold_label.configure(text=f'CURRENT GOLD:  {int(player_chips.total-3/2*(player_chips.bet))} + {player_chips.bet}')
                 player_chips.total -=  int(1/2*player_chips.bet)
@@ -347,25 +341,19 @@ def deal_button():
 def split_button():
     
     global  player_frame_split
-    
-    #player_frame_split = LabelFrame(main_frame, text=f'PLAYER: ?', bd=0, bg='green', fg='white', font=('Verdana',VELICINA_FONTA,'bold'))
+
     player_frame_split.grid(row=1, column=1, padx=(40,0))
     
     global player_label_1_split,player_label_2_split,player_label_3_split,player_label_4_split,player_label_5_split
-    
-    #player_label_1_split = Label(player_frame_split, text='', bg='dark green')
+
     player_label_1_split.grid(row=0, column=0, pady=20, padx=20)
 
-    #player_label_2_split = Label(player_frame_split, text='', bg='dark green')
     player_label_2_split.grid(row=0, column=1, pady=20, padx=20)
 
-    #player_label_3_split = Label(player_frame_split, text='', bg='dark green')
     player_label_3_split.grid(row=0, column=2, pady=20, padx=20)
 
-    #player_label_4_split = Label(player_frame_split, text='', bg='dark green')
     player_label_4_split.grid(row=0, column=3, pady=20, padx=20)
 
-    #player_label_5_split = Label(player_frame_split, text='', bg='dark green')
     player_label_5_split.grid(row=0, column=4, pady=20, padx=20) 
     
     global player_hand_split
